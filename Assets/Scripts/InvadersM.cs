@@ -48,7 +48,7 @@ public class InvadersM : MonoBehaviour
 
     private void Update()
     {
-        this.transform.position += _direction * this.speed.Evaluate(this.precentKilled) * Time.deltaTime;
+        this.transform.position += _direction * this.speed.Evaluate(this.percentKilled) * Time.deltaTime;
 
         Vector3 leftEdge = Camera.main.ViewportToWorldPoint(Vector3.zero);
         Vector3 rightEdge = Camera.main.ViewportToWorldPoint(Vector3.right);
