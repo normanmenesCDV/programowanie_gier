@@ -134,7 +134,8 @@ GameObject:
   - component: {fileID: 49481064}
   - component: {fileID: 49481063}
   - component: {fileID: 49481062}
-  m_Layer: 0
+  - component: {fileID: 49481065}
+  m_Layer: 6
   m_Name: SpaceShooterAssetPack_Ships_5_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -234,6 +235,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
+--- !u!114 &49481065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 49481061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3fd965cb7037b8489d69114d6e099a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+  laserPrefab: {fileID: 5709918587292938480, guid: 6329b80b1c5f7094ca93722e3f058da7, type: 3}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
