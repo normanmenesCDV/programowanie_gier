@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class InvadersM : MonoBehaviour
 {
@@ -12,7 +13,13 @@ public class InvadersM : MonoBehaviour
 
     public AnimationCurve speed;
 
+    public Projectile missilePrefab;
+
+    public float missileAttackRate = 1.0f;
+
     public int amoutKilled { get; private set; }
+
+    public int amountAlive => this.totalInvaders - this.amoutKilled;
 
     public int totalInvaders => this.rows * this.columns;
 
@@ -39,6 +46,11 @@ public class InvadersM : MonoBehaviour
                 invader.transform.localPosition = position;
             }
         }
+    }
+
+    private void Start()
+    {
+        InvokeRepeating(nameof(MissileAttack), this.missileAttackRate, this.missileAttackRate);
     }
 
     private void Update()
@@ -76,8 +88,30 @@ public class InvadersM : MonoBehaviour
         this.transform.position = position;
     }
 
+    private void MissileAttack()
+    {
+        foreach(Transform invaders in this.transform)
+         {
+            if(!invaders.gameObject.activeInHierarchy)
+            {
+                continue;
+            }
+
+            if(Random.value < (1.0f / (float)this.amountAlive))
+            {
+                Instantiate(this.missilePrefab, invaders.position, Quaternion.identity);
+                break;
+            }
+         }
+    }
+
     private void InvaderKilled()
     {
         this.amoutKilled++;
+
+        if(this.amoutKilled >= this.totalInvaders)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
     }
 }

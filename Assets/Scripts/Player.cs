@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -46,12 +47,10 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.layer == LayerMask.NameToLayer("Missile") ||
-            other.gameObject.layer == LayerMask.NameToLayer("Invader"))
+        if(other.gameObject.layer == LayerMask.NameToLayer("Invader") || 
+           other.gameObject.layer == LayerMask.NameToLayer("Missile"))
         {
-            if (killed != null) {
-                killed.Invoke();
-            }
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 
