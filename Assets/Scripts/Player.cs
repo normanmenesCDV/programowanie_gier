@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public float speed = 5f;
+    public float speed = 5.0f;
     public Projectile laserPrefab;
     public System.Action killed;
-    public bool laserActive { get; private set; }
+    public bool _laserActive;
 
     private void Update()
     {
@@ -21,7 +21,6 @@ public class Player : MonoBehaviour
         Vector3 leftEdge = Camera.main.ViewportToWorldPoint(Vector3.zero);
         Vector3 rightEdge = Camera.main.ViewportToWorldPoint(Vector3.right);
 
-        // Clamp the position of the character so they do not go out of bounds
         position.x = Mathf.Clamp(position.x, leftEdge.x, rightEdge.x);
         transform.position = position;
 
@@ -32,20 +31,17 @@ public class Player : MonoBehaviour
 
     private void Shoot()
     {
-        // Only one laser can be active at a given time so first check that
-        // there is not already an active laser
-        if (!laserActive)
+        if (!_laserActive)
         {
-            laserActive = true;
-
-            Projectile laser = Instantiate(laserPrefab, transform.position, Quaternion.identity);
-            laser.destroyed += OnLaserDestroyed;
+            Projectile projectile =  Instantiate(laserPrefab, this.transform.position, Quaternion.identity);
+            projectile.destroyed += LaserDestroyed;
+            _laserActive = true;
         }
     }
 
-    private void OnLaserDestroyed(Projectile laser)
+    private void LaserDestroyed()
     {
-        laserActive = false;
+        _laserActive = false;
     }
 
     private void OnTriggerEnter2D(Collider2D other)

@@ -4,25 +4,20 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     public float speed = 20f;
-    public Vector3 direction = Vector3.up;
-    public System.Action<Projectile> destroyed;
-    public new BoxCollider2D collider { get; private set; }
 
-    private void Awake()
-    {
-        collider = GetComponent<BoxCollider2D>();
-    }
+    public Vector3 direction;
 
-    private void OnDestroy()
-    {
-        if (destroyed != null) {
-            destroyed.Invoke(this);
-        }
-    }
+    public System.Action destroyed;
+
 
     private void Update()
     {
-        transform.position += direction * speed * Time.deltaTime;
+        this.transform.position += this.direction * this.speed * Time.deltaTime;
     }
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        this.destroyed.Invoke();
+        Destroy(this.gameObject);
+    }
 }

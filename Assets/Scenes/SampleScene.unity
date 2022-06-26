@@ -249,6 +249,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   laserPrefab: {fileID: 5709918587292938480, guid: 6329b80b1c5f7094ca93722e3f058da7, type: 3}
+  _laserActive: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -302,7 +303,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 10
+  orthographic size: 9.986049
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -327,7 +328,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
-  m_LocalScale: {x: 2.8400896, y: 69.375, z: 2.8400896}
+  m_LocalScale: {x: 2, y: 64.77, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -385,7 +386,7 @@ Transform:
   m_GameObject: {fileID: 528933757}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -9.5, z: -0.03205141}
-  m_LocalScale: {x: 20, y: 1, z: 1}
+  m_LocalScale: {x: 39, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -468,8 +469,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 602721649}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.0138, y: 0.0431, z: 0}
-  m_LocalScale: {x: 15.564903, y: 7.8348904, z: 1}
+  m_LocalPosition: {x: -0.0399, y: -0.009, z: 0}
+  m_LocalScale: {x: 30.672255, y: 7.794149, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -527,7 +528,7 @@ Transform:
   m_GameObject: {fileID: 633783959}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 9.5, z: -0.03205141}
-  m_LocalScale: {x: 20, y: 1, z: 1}
+  m_LocalScale: {x: 39.25, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -568,7 +569,31 @@ MonoBehaviour:
   - {fileID: 121269793970681976, guid: dc7f4ab12eef65947bf1217217f3bb37, type: 3}
   - {fileID: 121269793970681976, guid: dc7f4ab12eef65947bf1217217f3bb37, type: 3}
   rows: 4
-  columns: 8
+  columns: 14
+  speed:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: -0.0040130615
+      value: 1.5008698
+      inSlope: 0.4761851
+      outSlope: 0.4761851
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1.332864
+      value: 2.1374707
+      inSlope: 0.4761851
+      outSlope: 0.4761851
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!4 &885917359
 Transform:
   m_ObjectHideFlags: 0

@@ -10,17 +10,13 @@ public class InvadersM : MonoBehaviour
 
     public int columns = 11;
 
-    // private float speed = 1.0f;
-
     public AnimationCurve speed;
 
-    public int amountKilled { get; private set;  }
+    public int amoutKilled { get; private set; }
 
     public int totalInvaders => this.rows * this.columns;
 
-    public float percentKilled => (float)this.totalInvaders;
-
-    //public System.Action killed;
+    public float percentKilled => (float)this.amoutKilled / (float)this.totalInvaders;
 
     private Vector3 _direction = Vector2.right;
 
@@ -45,27 +41,29 @@ public class InvadersM : MonoBehaviour
         }
     }
 
-
     private void Update()
     {
         this.transform.position += _direction * this.speed.Evaluate(this.percentKilled) * Time.deltaTime;
 
-        Vector3 leftEdge = Camera.main.ViewportToWorldPoint(Vector3.zero);
-        Vector3 rightEdge = Camera.main.ViewportToWorldPoint(Vector3.right);
+         Vector3 leftEdge = Camera.main.ViewportToWorldPoint(Vector3.zero);
+         Vector3 rightEdge = Camera.main.ViewportToWorldPoint(Vector3.right);
 
-        foreach (Transform invader in this.transform)
-        {
-            if (!invader.gameObject.activeInHierarchy) {
+         foreach(Transform invaders in this.transform)
+         {
+            if(!invaders.gameObject.activeInHierarchy)
+            {
                 continue;
             }
 
-            if (_direction == Vector3.right && invader.position.x >= (rightEdge.x - 1.0f)) {
+            if(_direction == Vector3.right && invaders.position.x >= (rightEdge.x - 1.0f))
+            {
                 AdvanceRow();
             }
-            else if (_direction == Vector3.left && invader.position.x <= (leftEdge.x + 1.0f)) {
+            else if(_direction == Vector3.left && invaders.position.x <= (leftEdge.x + 1.0f))
+            {
                 AdvanceRow();
             }
-        }
+         }
     }
 
 
@@ -77,9 +75,9 @@ public class InvadersM : MonoBehaviour
         position.y -= 1.0f;
         this.transform.position = position;
     }
-    
+
     private void InvaderKilled()
     {
-        this.amountKilled++;
+        this.amoutKilled++;
     }
 }

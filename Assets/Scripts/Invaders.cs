@@ -10,7 +10,6 @@ public class Invaders : MonoBehaviour
 
     public System.Action killed;
 
-
     private SpriteRenderer _spriteRenderer;
 
     private int _animationFrame;
