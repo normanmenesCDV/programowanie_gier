@@ -344,7 +344,7 @@ GameObject:
   m_Component:
   - component: {fileID: 528933759}
   - component: {fileID: 528933758}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Border02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -486,7 +486,7 @@ GameObject:
   m_Component:
   - component: {fileID: 633783961}
   - component: {fileID: 633783960}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Border01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -544,7 +544,7 @@ GameObject:
   m_Component:
   - component: {fileID: 885917359}
   - component: {fileID: 885917358}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: InvadersM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -568,16 +568,16 @@ MonoBehaviour:
   - {fileID: 121269793970681976, guid: dc7f4ab12eef65947bf1217217f3bb37, type: 3}
   - {fileID: 121269793970681976, guid: dc7f4ab12eef65947bf1217217f3bb37, type: 3}
   - {fileID: 121269793970681976, guid: dc7f4ab12eef65947bf1217217f3bb37, type: 3}
-  rows: 4
-  columns: 14
+  rows: 2
+  columns: 2
   speed:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: -0.0040130615
-      value: 1.5008698
-      inSlope: 0.4761851
-      outSlope: 0.4761851
+      time: 0.13074493
+      value: 2.1239471
+      inSlope: 0.0112497825
+      outSlope: 0.0112497825
       tangentMode: 34
       weightedMode: 0
       inWeight: 0
@@ -585,8 +585,8 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 1.332864
       value: 2.1374707
-      inSlope: 0.4761851
-      outSlope: 0.4761851
+      inSlope: 0.0112497825
+      outSlope: 0.0112497825
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334

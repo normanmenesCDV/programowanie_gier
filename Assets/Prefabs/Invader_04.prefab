@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7812838613310564651}
   - component: {fileID: 2949266510026528505}
   - component: {fileID: 121269793970681976}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Invader_04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1516829745986524295}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.61108005, y: 0.4336852, z: -0.03205141}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 6, y: 6, z: 6}
   m_ConstrainProportionsScale: 0
   m_Children: []

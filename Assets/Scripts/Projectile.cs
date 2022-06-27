@@ -17,10 +17,13 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if(other.gameObject.layer == 6 || other.gameObject.layer == 10 || other.gameObject.layer == 7)
+        {
         if(this.destroyed != null)
         {
             this.destroyed.Invoke();
         }
         Destroy(this.gameObject);
+        }
     }
 }
